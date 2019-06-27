@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class SwitchCase {
 
-	void MostarIdh(int op) {
+	void MostrarIdh(int op) {
 		switch (op) {
 		case 1:
 			System.out.println("01° Noruega - 0.953  ");
