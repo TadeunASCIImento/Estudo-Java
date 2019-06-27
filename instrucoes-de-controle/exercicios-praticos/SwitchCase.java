@@ -2,7 +2,7 @@ package br.com.estudo;
 
 import java.util.Scanner;
 
-public class SwitchCase {
+public class Idh {
 
 	void MostrarIdh(int op) {
 		switch (op) {
