@@ -1,4 +1,4 @@
-package br.com.classe.string.stringbuilder.character;
+package br.com.estudo;
 
 public class StringBuilderConstrutores {
 
