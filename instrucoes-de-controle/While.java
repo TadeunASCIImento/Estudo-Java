@@ -11,7 +11,7 @@ public class While {
 			if (contador < 20)
 				System.out.println("Passo: " + contador);
 			else
-				System.exit(1);
+				continueLoop = false;
 			contador++;
 
 		}
