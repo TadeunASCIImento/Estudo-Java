@@ -1,6 +1,6 @@
 package br.com.estudo;
 
-// declarando a enum com as constantes do menu de opçoes
+// declarando a enum com as constantes do menu de opções
 enum Opcoes {
 
 	INSERIR(1), ALTERAR(2), DELETAR(3), VISUALIZAR(4);
@@ -20,6 +20,7 @@ enum Opcoes {
 public class MenuOpcoesUsandoEnum {
 
 	public static void main(String[] args) {
+
 		// chamada ao metodo selecionarOpcao(),
 		// passando as constantes da enum como parâmetro
 		selecionarOpcao(Opcoes.VISUALIZAR);
