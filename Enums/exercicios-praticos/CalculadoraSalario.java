@@ -163,7 +163,7 @@ enum MenuOpcoes {
 
 	}
 
-	int getValor() {
+	int getOpcao(){
 
 		return intOpcao;
 	}
