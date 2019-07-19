@@ -22,7 +22,7 @@ public class AnalizaCaminhoArquivo {
 
 			System.out.printf("\n%s", arquivo.getName() + " existe");
 			System.out.printf("\n%s", (arquivo.isFile() ? "É um arquivo" : "não é um arquivo"));
-			System.out.printf("\n%s", (arquivo.isDirectory() ? "É diretório" : "NãoS é diretótio"));
+			System.out.printf("\n%s", (arquivo.isDirectory() ? "É diretório" : "Não é diretótio"));
 			System.out.printf("\n%s", (arquivo.isAbsolute() ? "É caminho absoluto" : "não é caminho absoluto"));
 			System.out.printf("\nUltima modificação %s ", arquivo.lastModified());
 			System.out.printf("\nTamanho %s:  ", arquivo.length());
