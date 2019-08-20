@@ -39,7 +39,7 @@ public class ContaPalavrasUtilizandoHashMap {
 
 			} else {
 
-				mapa.put(palavra, 1); // insere vova palavra com contagem de 1 para o mapa.
+				mapa.put(palavra, 1); // insere nova palavra com contagem de 1 para o mapa.
 			}
 
 		}
