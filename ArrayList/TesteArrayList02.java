@@ -9,31 +9,31 @@ public class TesteArrayList02 {
 
 		Scanner scanner = new Scanner(System.in);
 
-		ArrayList<String> items = new ArrayList<String>();
+		ArrayList<String> itens = new ArrayList<String>();
 
 		do {
-			System.out.println("Digite os items da lista ou Sair.");
-			items.add(scanner.nextLine());
-		} while (!items.contains("Sair"));
+			System.out.println("Digite os itens da lista ou Sair.");
+			itens.add(scanner.nextLine());
+		} while (!itens.contains("Sair"));
 
-		System.out.println("Lista de items em Arraylist.");
-		for (int i = 0; i < items.size(); i++) {
-			if (items.get(i).equals("Sair"))
+		System.out.println("Lista de itens em Arraylist.");
+		for (int i = 0; i < itens.size(); i++) {
+			if (itens.get(i).equals("Sair"))
 				System.out.printf("");
 			else
-				System.out.println(items.get(i));
+				System.out.println(itens.get(i));
 		}
 
 
-		System.out.println("Digite o nome do item para exclusão e preesione Enter.");
-		items.remove(scanner.nextLine());
+		System.out.println("Digite o nome do item para exclusão e pressione Enter.");
+		itens.remove(scanner.nextLine());
 
 		System.out.println("Lista de items em Arraylist após a exclusão.");
-		for (int i = 0; i < items.size(); i++) {
-			if (items.get(i).equals("Sair"))
+		for (int i = 0; i < itens.size(); i++) {
+			if (itens.get(i).equals("Sair"))
 				System.out.printf("");
 			else
-				System.out.println(items.get(i));
+				System.out.println(itens.get(i));
 
 			scanner.close();
 		}
