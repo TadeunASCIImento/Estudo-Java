@@ -1,3 +1,3 @@
-# Estudo da programação em Java.
+# Estudo da linguagem de programação Java.
 Neste repositório serão apresentados, diversos exercícios realizados durante 
-o estudo da programação em Java.
+o estudo da linguagem de programação Java.
