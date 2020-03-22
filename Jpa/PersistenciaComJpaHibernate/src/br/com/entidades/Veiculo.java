@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity(name = "tab_veiculos_passeio")
+@Entity(name = "tab_veiculos")
 public class Veiculo {
 
 	private Long codigo;
