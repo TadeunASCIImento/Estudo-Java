@@ -19,7 +19,7 @@ public class TesteVeiculoController extends VeiculoController {
 
 		switch (opcao) {
 		case 1:
-			veiculo.setMarca("Evoluti");
+			veiculo.setMarca("Evolution");
 			veiculo.setModelo("Venus6");
 			veiculo.setAnoFabricacao(2049);
 			veiculo.setAnoModelo(2050);
