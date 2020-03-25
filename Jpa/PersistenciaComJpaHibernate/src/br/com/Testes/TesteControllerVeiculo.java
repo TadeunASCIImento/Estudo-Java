@@ -57,6 +57,7 @@ public class TesteVeiculoController extends VeiculoController {
 
 		case 5:
 			List<Entidade> lista = listarVeiculos();
+      //processa polimorficamente realizando downcasting.
 			for (Entidade entidade : lista) {
 				veiculo = (Veiculo) entidade;
 				System.out.println(veiculo.toString());
