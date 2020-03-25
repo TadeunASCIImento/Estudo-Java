@@ -14,7 +14,7 @@ public class TesteVeiculoController extends VeiculoController {
 
 		Veiculo veiculo = new Veiculo();
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("1 - Inserir  2 - Excluir 3 - Visualizar 4 - Atualizar" + " 5 - Listar");
+		System.out.println("1 - Inserir  2 - Excluir 3 - Visualizar 4 - Atualizar  5 - Listar");
 		int opcao = scanner.nextInt();
 
 		switch (opcao) {
