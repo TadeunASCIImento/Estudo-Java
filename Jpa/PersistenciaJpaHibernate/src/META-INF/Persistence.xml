@@ -25,7 +25,7 @@
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<properties>
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://localhost:3306/bdlojaveiculos?serverTimezone=UTC" />
+				value="jdbc:mysql://localhost:3306/NOME_BANCO?serverTimezone=UTC" />
 			<property name="javax.persistence.jdbc.user" value="USUARIO_BANCO" />
 			<property name="javax.persistence.jdbc.password"
 				value="SENHA_BANCO" />
