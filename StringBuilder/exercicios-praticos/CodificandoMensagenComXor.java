@@ -13,7 +13,7 @@ public class CodificandoMensagenComXor {
 
 		System.out.println("\n\t\tMensagen original: " + buffer);
 
-		// Codofica mensagem
+		// Codifica mensagem
 		for (int i = 0; i < buffer.length(); i++)
 			codmsg = codmsg + (char) (buffer.charAt(i) ^ key);
 		System.out.println("\n\t\tMensagen codificada: " + codmsg);
