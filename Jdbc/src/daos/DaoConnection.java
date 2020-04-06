@@ -14,7 +14,7 @@ public abstract class Dao {
 	private final String USUARIO_BANCO = "usuarioBanco";
 	private final String SENHA_BANCO = "senhaBanco";
 
-  	protected PreparedStatement pstm;
+  protected PreparedStatement pstm;
 	protected ResultSet resultado;
 	protected Connection conn;
 
