@@ -23,7 +23,7 @@ public class DaoUsuario extends Dao implements DaoFunctions, InstrucoesSql {
 			}
 
 		} catch (SQLException exc) {
-			System.out.println("Erro ao conectar com banco.");
+			System.out.println("Erro ao conectar ao banco.");
 			exc.printStackTrace();
 
 		}
