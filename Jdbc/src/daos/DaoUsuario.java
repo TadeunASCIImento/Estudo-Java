@@ -50,6 +50,27 @@ public class DaoUsuario extends Dao implements DaoFunctions, InstrucoesSql {
 			return true;
 		}
 
+		@Override
+		public Usuario findOne(int id) {
+
+			Usuario usuario = new Usuario();
+			try {
+				this.obterConexao();
+				this.pstm = this.conn.prepareStatement(SELECT_USUARIO + id);
+				this.resultado = this.pstm.executeQuery();
+				while (this.resultado.next()) {
+					usuario.setId(this.resultado.getInt("id"));
+					usuario.setNome(this.resultado.getString("nome"));
+					usuario.setCpf(this.resultado.getString("cpf"));
+					usuario.setUsuario(this.resultado.getString("usuario"));
+					usuario.setSenha(this.resultado.getString("senha"));
+				}
+			} catch (SQLException exc) {
+				exc.printStackTrace();
+
+			}
+			return usuario;
+		}
 
 
 
