@@ -72,6 +72,18 @@ public class DaoUsuario extends Dao implements DaoFunctions, InstrucoesSql {
 			return usuario;
 		}
 
+		@Override
+		public boolean delete(int id) {
 
+			try {
+				this.obterConexao();
+				this.pstm = this.conn.prepareStatement(DELETE_USUARIO + id);
+				pstm.executeUpdate();
+			} catch (SQLException exc) {
+				exc.printStackTrace();
+			}
+			return true;
+
+		}
 
 }
