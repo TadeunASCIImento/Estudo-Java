@@ -26,6 +26,19 @@ public class DaoCupom extends Dao implements DaoFunctions, InstrucoesSql {
 		}
 	}
 
+  @Override
+  public boolean delete(int id) {
+  try {
+    this.obterConexao();
+    this.pstm = this.conn.prepareStatement(DELETE_CUPOM + id);
+    pstm.executeUpdate();
+    return true;
+  } catch (SQLException sqlExc) {
+    sqlExc.printStackTrace();
+    return false;
+  }
+}
+
 
 
 }
