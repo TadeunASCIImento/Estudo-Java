@@ -8,11 +8,9 @@ public class Break {
 	private static int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
 	static final String INPUT_MESSAGE = "Elemento para busca no array? ";
-
 	static final String FOUND_MESSAGE = "Elemento localizado no array ";
-
 	private static final String NOT_FOUND_MESSAGE = "Elemento não localizado no array ";;
-
+	
 	// stream de entrada do teclado.
 	private static Scanner scanner = new Scanner(System.in);
 
