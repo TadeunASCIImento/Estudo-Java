@@ -38,12 +38,11 @@ public class CalculadoraOperacoesBasicas {
 	}
 
 	private static void exibirMenuDeOpcoesParaCalculo() {
-		System.out.println("Selecione uma opção para cálculo:");
-		System.out.println("(1)Somar");
-		System.out.println("(2)Subtrair");
-		System.out.println("(3)Dividir");
-		System.out.println("(4)Multiplicar");
-		System.out.println("(-1)Finalizar");
+		String[] messages = { "Selecione uma opção para cálculo:", "(1)Somar", "(2)Subtrair", "(3)Dividir",
+				"(4)Multiplicar", "(-1)Finalizar", };
+		for (String message : messages) {
+			System.out.println(message);
+		}
 	}
 
 	private static int getInputScannerInt() {
