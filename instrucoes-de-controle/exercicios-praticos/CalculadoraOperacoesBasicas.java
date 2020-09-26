@@ -2,119 +2,76 @@ package br.com.estudo;
 
 import java.util.Scanner;
 
-public class CalculadoraSimples {
+public class CalculadoraOperacoesBasicas {
+
+	private static Scanner scanner = new Scanner(System.in);
+	private static String inputValorMessage = "informe o valor? :";
+	private static String endMessage = "calculadora finalizada.";
 
 	public static void main(String[] args) {
 
-		Scanner entrada = new Scanner(System.in);
-		Operacao operacao = new Operacao();
-		int op;
-		double x, y;
+		do {
+			exibirMenuDeOpcoesParaCalculo();
+			int opcao = getInputScannerInt();
+			if (opcao == -1) {
+				showMessage(endMessage);
+				System.exit(1);
+			}
+			showMessage(inputValorMessage);
+			double valor1 = getInputScannerDouble();
+			showMessage(inputValorMessage);
+			double valor2 = getInputScannerDouble();
+			double resultado = executeCalculo(opcao, valor1, valor2);
+			showResultado(resultado);
 
-		/*
-		 * Laço for infinito, executa o programa enquanto a opção for diferente de 5
-		 * (ESC)
-		 */
-		for (;;) {
-			do {
-				operacao.mostrarMenu();
-				op = entrada.nextInt();
-				/* Executa operação de acordo com a opção selecionada */
-				switch (op) {/* verifica a operação selecionada */
+		} while (true);
+	}
 
-				/* Efetua a operação de soma */
-				case 1:
-					operacao.mensagen();
-					x = entrada.nextDouble();
-					y = entrada.nextDouble();
-					operacao.somar(x, y);
-					break;
-				/* Efetua a operação de subtração */
-				case 2:
-					operacao.mensagen();
-					x = entrada.nextDouble();
-					y = entrada.nextDouble();
-					operacao.subtrair(x, y);
-					break;
-				/* Efetua a operação de multiplicação */
-				case 3:
-					operacao.mensagen();
-					x = entrada.nextDouble();
-					y = entrada.nextDouble();
-					operacao.multiplicar(x, y);
-					break;
-				/* Efetua a operação de divisão */
-				case 4:
-					operacao.mensagen();
-					x = entrada.nextDouble();
-					y = entrada.nextDouble();
-					operacao.dividir(x, y);
-					break;
-				/* Finaliza a execução do programa */
-				case 5:
-					System.out.println("<Terminado>");
-					entrada.close();
-					System.exit(1);
-				}
+	private static void showMessage(String message) {
+		System.out.print(message);
+		System.out.println();
+	}
 
-			} while (!operacao.validarOpcao(op));/* verifica se a opção é válida */
-			System.out.println("\n");
+	private static double getInputScannerDouble() {
+		double valorDouble = scanner.nextDouble();
+		return valorDouble;
+	}
+
+	private static void exibirMenuDeOpcoesParaCalculo() {
+		System.out.println("Selecione uma opção para cálculo:");
+		System.out.println("(1)Somar");
+		System.out.println("(2)Subtrair");
+		System.out.println("(3)Dividir");
+		System.out.println("(4)Multiplicar");
+		System.out.println("(-1)Finalizar");
+	}
+
+	private static int getInputScannerInt() {
+		int valorInt = scanner.nextInt();
+		return valorInt;
+	}
+
+	private static double executeCalculo(int opcao, double valor1, double valor2) {
+		double resultado = 0;
+		switch (opcao) {
+		case 1:
+			resultado = valor1 + valor2;
+			break;
+		case 2:
+			resultado = valor1 - valor2;
+			break;
+		case 3:
+			resultado = valor1 / valor2;
+			break;
+		case 4:
+			resultado = valor1 * valor2;
+			break;
 		}
-	}
-}
-
-/* Inicio da classe aninhada operacao */
-class Operacao {
-
-	Scanner entrada = new Scanner(System.in);
-	public double a, b, result;
-
-	/* Método de exibição de mensagem ao usuário */
-	public void mensagen() {
-		System.out.println("Digite dois números:");
+		return resultado;
 	}
 
-	/* Exibe o menu de opções */
-	public void mostrarMenu() {
-
-		System.out.println("\nEscolha a operação:\n");
-		System.out.println(" 1  - [ + ]");
-		System.out.println(" 2  - [ - ]");
-		System.out.println(" 3  - [ * ]");
-		System.out.println(" 4  - [ / ]");
-		System.out.println(" 5  - [ESC]");
-
+	private static void showResultado(double resultado) {
+		System.out.printf("\no valor cálculado: %.2f\n\n", resultado);
 	}
 
-	/* Métodos para efetuar as operações */
-	public void somar(double a, double b) {
-
-		System.out.println("Resultado: " + a + " + " + b + " = " + (a + b));
-	}
-
-	public void subtrair(double a, double b) {
-
-		System.out.println("Resultado: " + a + " - " + b + " = " + (a - b));
-	}
-
-	public void multiplicar(double a, double b) {
-
-		System.out.println("Resultado: " + a + " x " + b + " = " + (a * b));
-	}
-
-	public void dividir(double a, double b) {
-
-		System.out.println("Resultado: " + a + " / " + b + " = " + (a / b));
-	}
-
-	/* Valida a opção selecionada */
-	public boolean validarOpcao(int opcao) {
-
-		if (opcao < 1 | opcao > 4 & opcao != 5) {
-			System.out.println("Operação inválida tente novamente!.");
-			return false;
-		} else {
-			return true;
-		}
-	}
 }
