@@ -5,7 +5,9 @@ import java.util.Scanner;
 public class CalculadoraOperacoesBasicas {
 
 	private static Scanner scanner = new Scanner(System.in);
+
 	private static String inputValorMessage = "informe o valor? :";
+
 	private static String endMessage = "calculadora finalizada.";
 
 	public static void main(String[] args) {
@@ -13,18 +15,21 @@ public class CalculadoraOperacoesBasicas {
 		do {
 			exibirMenuDeOpcoesParaCalculo();
 			int opcao = getInputScannerInt();
-			if (opcao == -1) {
-				showMessage(endMessage);
-				System.exit(1);
-			}
+			exit(opcao);
 			showMessage(inputValorMessage);
 			double valor1 = getInputScannerDouble();
 			showMessage(inputValorMessage);
 			double valor2 = getInputScannerDouble();
 			double resultado = executeCalculo(opcao, valor1, valor2);
 			showResultado(resultado);
-
 		} while (true);
+	}
+
+	private static void exit(int opcao) {
+		if (opcao == -1) {
+			showMessage(endMessage);
+			System.exit(1);
+		}
 	}
 
 	private static void showMessage(String message) {
@@ -40,9 +45,8 @@ public class CalculadoraOperacoesBasicas {
 	private static void exibirMenuDeOpcoesParaCalculo() {
 		String[] messages = { "Selecione uma opção para cálculo:", "(1)Somar", "(2)Subtrair", "(3)Dividir",
 				"(4)Multiplicar", "(-1)Finalizar", };
-		for (String message : messages) {
+		for (String message : messages)
 			System.out.println(message);
-		}
 	}
 
 	private static int getInputScannerInt() {
