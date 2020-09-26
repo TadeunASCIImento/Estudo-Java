@@ -1,45 +1,52 @@
 package br.com.estudo;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class For {
 
+	// mensagens exibidas ao usuário.
+	static String inputSizeMessage = "Tamanho para o array?";
+	static String inputSeedMessage = "Semente para o  array?";
+	static Scanner scanner = new Scanner(System.in);
+
 	public static void main(String[] args) {
 
-		// cria objeto da classe Random
-		Random gerador = new Random();
-
-		// Cria array de inteiros de 20 elementos.
-		int numeros[] = new int[20];
-
-		// Variáveis para armazenar o resultado da soma.
-		int somaPares = 0;
-		int somaImpares = 0;
-
-		// Laço for controlado por contator para preencher o array com números
-		// aleatóriamente.
-		for (int i = 0; i < numeros.length; i++) {
-			// Gera números aleatórios de 1 á 100
-			numeros[i] = gerador.nextInt(100);
-		}
-
-		// Laço ( foreach ) para percorrer e mostrar os números no array
-		for (int numero : numeros) {// variante melhorada do laço for
-			System.out.println("< Número gerado>: " + numero);
-			// Verifica se o número é par
-			if (numero % 2 == 0) {
-				somaPares += numero;// Soma os pares.
-
-			} else if (numero % 2 == 1) {
-				// Verifica se o número é impar.
-				somaImpares += numero;// Soma os impares.
-			}
-
-		}
-
-		// Exibe o resultado da soma dos números pares e impares.
-		System.out.println(
-				"\n<A soma dos números pares é> : " + somaPares + "\n<A soma dos númerosimpares é> : " + somaImpares);
-
+		showMessage(inputSizeMessage);
+		int size = getInputScanner();
+		showMessage(inputSeedMessage);
+		int semente = getInputScanner();
+		int[] randomArray = getRandomArray(semente, size);
+		showIntArray(randomArray);
 	}
+
+	// exibe as mensagens ao usuário.
+	private static void showMessage(String mensagem) {
+		System.out.print(mensagem);
+	}
+
+	// exibe os elementos do array usando o laço foreach.
+	private static void showIntArray(int[] array) {
+		showMessage("Elementos do array: ");
+		for (int e : array) {
+			System.out.printf(" %d", e);
+		}
+	}
+
+	// retorna os valores de configuração do array.
+	private static int getInputScanner() {
+		int valorInt = scanner.nextInt();
+		return valorInt;
+	}
+
+	// popula o array randômico usando o laço for.
+	private static int[] getRandomArray(int semente, int size) {
+		Random randon = new Random();
+		int randomArray[] = new int[size];
+		for (int i = 0; i < randomArray.length; i++) {
+			randomArray[i] = (1 + randon.nextInt(semente));
+		}
+		return randomArray;
+	}
+
 }
