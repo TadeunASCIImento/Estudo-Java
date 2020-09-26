@@ -20,10 +20,10 @@ public class SistemaDeObservacaoDoIdhPorPaises {
 
 	// deve exibir menu com lista de países.
 	private static void showCountryOptionsMenu() {
-		String[] opcaoes = { "Escolha um País para ver o IDH 2018.", "(1)Noruega", "(2)Suiça", "(3)Austrália",
+		String[] opcoes = { "Escolha um País para ver o IDH 2018.", "(1)Noruega", "(2)Suiça", "(3)Austrália",
 				"(4)Irlanda", "(5)Alemanha", "(6)Islândia", "(7)Hong Kong", "(8)Suécia", "(9)Singapura", "(10)Holanda",
 				"(11)Brasil", "(-1)Para sair\n\n" };
-		for (String opcao : opcaoes) {
+		for (String opcao : opcoes) {
 			System.out.println(opcao);
 		}
 
