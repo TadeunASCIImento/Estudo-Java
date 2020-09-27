@@ -4,18 +4,19 @@ public class DoWhile {
 
 	public static void main(String[] args) {
 
-		boolean continueLoop = true;
-		int contador = 0;
-
-		do {
-			if (contador < 20)
-				System.out.println("Passo: " + contador);
-			else
-				continueLoop = false;
-			contador++;
-
-		} while (continueLoop);
+		dowhile();
 
 	}
 
+	private static void dowhile() {
+		boolean loop = true;
+		int counter = 0;
+		do {
+			if (counter < 20)
+				System.out.printf("Passo: %d\n\n", counter);
+			else
+				loop = false;
+			counter++;
+		} while (loop);
+	}
 }
