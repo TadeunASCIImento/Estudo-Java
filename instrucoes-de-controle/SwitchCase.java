@@ -27,6 +27,16 @@ public class SwitchCase {
 		System.out.print(mensagem);
 	}
 
+	private static int getScannerInputInt() {
+		int valorInt = scanner.nextInt();
+		return valorInt;
+	}
+
+	private static void finalizar() {
+		System.out.println("finalizado.");
+		System.exit(1);
+	}
+
 	private static String switchCase(int opcao) {
 		String operacao = null;
 		switch (opcao) {
@@ -47,16 +57,6 @@ public class SwitchCase {
 			break;
 		}
 		return operacao;
-	}
-
-	private static void finalizar() {
-		System.out.println("finalizado.");
-		System.exit(1);
-	}
-
-	private static int getScannerInputInt() {
-		int valorInt = scanner.nextInt();
-		return valorInt;
 	}
 
 }
