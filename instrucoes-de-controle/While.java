@@ -4,18 +4,20 @@ public class While {
 
 	public static void main(String[] args) {
 
-		boolean continueLoop = true;
-		int contador = 0;
-
-		while (continueLoop) {
-			if (contador < 20)
-				System.out.println("Passo: " + contador);
-			else
-				continueLoop = false;
-			contador++;
-
-		}
+		getWhile();
 
 	}
 
+	private static void getWhile() {
+		boolean loop = true;
+		int counter = 0;
+		while (loop) {
+			if (counter < 20) {
+				System.out.printf("Passo: %d\n", counter);
+			} else {
+				loop = false;
+			}
+			counter++;
+		}
+	}
 }
