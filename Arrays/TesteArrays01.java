@@ -4,22 +4,26 @@ public class TesteArrays01 {
 
 	public static void main(String[] args) {
 
-		final int ARRAY_LENGTH = 10;// declara uma constante para o tamanho do array.
+		exibirArrayInt(gerarArrayDeInteiros());
 
-		int array[] = new int[ARRAY_LENGTH];// Declara um array de inteiros com tamanho
-											// 10(constante ARRAY_LENGHT)
+	}
 
-		for (int cont = 0; cont < array.length; cont++) {// Percorre o array
-			array[cont] = 2 + 2 * cont;// atribui valores calculados no array
+	private static int[] gerarArrayDeInteiros() {
+		// constante, define o tamanho do array.
+		final int ARRAY_LENGTH = 10;
+		int[] arrayInt = new int[ARRAY_LENGTH];
+		for (int i = 0; i < arrayInt.length; i++) {
+			// populando o array.
+			arrayInt[i] = (int) Math.pow(i, 2);
 		}
+		return arrayInt;
+	}
 
-		// Mostra o conteúdo do array após processamento.
-		System.out.println("\n\tIndíce " + "\t\tValor ");
-		for (int cont = 0; cont < array.length; cont++) {
-
-			System.out.println("\t [" + cont + "]" + " \t\t[" + array[cont] + "]");
+	private static void exibirArrayInt(int[] arrayInt) {
+		System.out.print("elementos no array: ");
+		for (int e : arrayInt) {
+			System.out.printf(" %d ", e);
 		}
-
 	}
 
 }
