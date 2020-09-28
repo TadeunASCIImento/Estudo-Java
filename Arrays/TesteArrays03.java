@@ -1,55 +1,65 @@
 package br.com.estudo;
 
+import java.util.Scanner;
+/*
+ * Comparando Strings entre arrays diferentes.
+ */
 public class TesteArrays03 {
+
+	private static Scanner scanner = new Scanner(System.in);
+
+	private static String inputNomeMessage = "Informe 3 nomes ?";
+	private static String equalMessage = " existe no arrayNomes2.";
+	private static String showArrayMessage = "Nomes no array:";
 
 	public static void main(String[] args) {
 
-		// Declara dois arrays de Strings com os nomes.
-		String arrayNomes01[] = { "nome01", "nome02", "nome03" };
-		String arrayNomes02[] = { "nome04", "nome05", "nome06" };
+		showMessage(inputNomeMessage);
+		String[] arrayNomes1 = getArrayNomes();
 
-		System.out.print("\n\tElementos do arrayNomes01: ");
-		mostrarNomesNoArray(arrayNomes01);
+		exibirArrayDeNomes(arrayNomes1);
+		System.out.println("\n");
 
-		System.out.print("\n\tElementos do arrayNomes02: ");
-		mostrarNomesNoArray(arrayNomes02);
+		showMessage(inputNomeMessage);
+		String[] arrayNomes2 = getArrayNomes();
 
-		compararNomes(arrayNomes01, arrayNomes02);
+		exibirArrayDeNomes(arrayNomes2);
+		System.out.println("\n");
+
+
+		getEquals(arrayNomes1, arrayNomes2);
 
 	}
 
-	private static void compararNomes(String[] array1, String[] array2) {
-		int contador = 0;
-		int elementos = array1.length + array2.length;// quantidade de elementos nos dois arrays.
-
-		// Percorre os dois arrays consecutivamente indice a indice usuando laços
-		// aninhados.
-		for (int a = 0; a < array1.length; a++) {
-			for (int b = 0; b < array2.length; b++) {
-				if (array1[a].equals(array2[b])) {// efetua a comparação entre os nomes.
-					// se forem iguais mostra no console.
-					System.out.println("\nOs nomes " + array1[a] + " e " + array2[b] + " são iguais");
-					contador += 1;
-				} else {
-
+	// verifica quais nomes são e não são iguais.
+	private static void getEquals(String[] arrayNomes1, String[] arrayNomes2) {
+		for (int j = 0; j < arrayNomes1.length; j++) {
+			for (int i = 0; i < arrayNomes1.length; i++) {
+				if (arrayNomes1[i].contains(arrayNomes2[j])) {
+					showMessage("O nome ".concat(arrayNomes1[i].concat(equalMessage)));
+					System.out.println("\n");
 				}
 			}
 		}
-		System.out
-				.println("\n\tQtd de nomes nos arrays: (" + elementos + ")\n\tQtd de nomes iguais: (" + contador + ")");
-
-		if (contador == 0)
-			System.out.println("\tNão foram encontrados nomes iguais nos arrays.\n\n");
-		else
-			System.out.println("\tEncontrados nomes iguais nos arrays.\n\n");
 	}
 
-	private static void mostrarNomesNoArray(String[] array) {
-		for (String elemento : array) {
-			System.out.printf("(%s)", elemento);
-
+	private static String[] getArrayNomes() {
+		String[] arrayNomes = new String[3];
+		for (int i = 0; i < arrayNomes.length; i++) {
+			arrayNomes[i] = scanner.next();
 		}
+		return arrayNomes;
+	}
 
+	private static void exibirArrayDeNomes(String[] arrayNomes) {
+		showMessage(showArrayMessage);
+		for (String e : arrayNomes) {
+			showMessage("  ".concat(e));
+		}
+	}
+
+	private static void showMessage(String message) {
+		System.out.print(message);
 	}
 
 }
