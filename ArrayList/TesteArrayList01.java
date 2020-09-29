@@ -2,49 +2,92 @@ package br.com.estudo;
 
 import java.util.ArrayList;
 
-public class TesteArrayList01 {
+import java.security.SecureRandom;
+import java.util.ArrayList;
+
+/*
+ *  Declarando, inserindo e exibindo dados em ArrayLists.
+ */
+
+public class TestesArrayList01 {
+
+	private static SecureRandom secureRandon = new SecureRandom();
 
 	public static void main(String[] args) {
 
-		// cria arrayList de inteiros
-		ArrayList<Integer> intArrayList = new ArrayList<Integer>();
-		for (int cont = 0; cont < 15; cont++)// conta de 0 - 14
-			intArrayList.add(cont);// inserindo elementos no arrayList
-		// exibe no console os elementos
-		System.out.println("\nintArrayList elementos:" + intArrayList);
+		print("ArrayInteger:");
+		ArrayList<Integer> arrayListInteger = gerarArrayListInteger();
+		print(arrayListInteger);
 
-		// cria um arrayList do tipo double
-		ArrayList<Double> dblArrayList = new ArrayList<Double>();
-		for (double cont = 0.0; cont < 10.0; cont++)
-			dblArrayList.add(cont);
-		System.out.println("\ndblArrayList elementos:" + dblArrayList);
+		print("\n\nArrayDouble:");
+		ArrayList<Double> arrayListDouble = gerarArrayListDouble();
+		print(arrayListDouble);
 
-		// cria um arrayList do tipo float
-		ArrayList<Float> fltArrayList = new ArrayList<Float>();
-		for (float cont = 0F; cont < 10F; cont++)
-			fltArrayList.add(cont);
-		System.out.println("\nfltArrayList elementos:" + fltArrayList);
+		print("\n\nArrayFloat:");
+		ArrayList<Float> arrayListFloat = gerarArrayListFloat();
+		print(arrayListFloat);
 
-		// cria um arrayList do tipo Number
-		ArrayList<Number> numArrayList = new ArrayList<Number>();
-		byte nByte = (byte) 128;
-		numArrayList.add(1000);// insere tipo inteiro
-		numArrayList.add(200L);// insere tipo Long
-		numArrayList.add(3.0F);// insere tipo float
-		numArrayList.add(20.0);// insere tipo double
-		numArrayList.add(nByte);// insere tipo byte
-		System.out.println("\nsnumArrayList elementos:" + numArrayList);
+		print("\n\nArrayString:");
+		ArrayList<String> arrayListString = gerarArrayListString();
+		print(arrayListString);
 
-		// cria um arrayList do tipo String
-		ArrayList<String> strArrayList = new ArrayList<String>();
-		// inserindo as strings no arrayList
-		strArrayList.add("string01");
-		strArrayList.add("string02");
-		strArrayList.add("string03");
-		strArrayList.add("string04");
-		strArrayList.add("string05");
-		System.out.println("\nstrArrayList elementos:" + strArrayList);
+		print("\n\nArrayNumber:");
+		ArrayList<Number> arrayListNumber = gerarArrayListNumber();
+		print(arrayListNumber);
 
 	}
 
+	// cria um ArrayList do tipo Integer com 20 elementos aleatórios.
+	private static ArrayList<Integer> gerarArrayListInteger() {
+		ArrayList<Integer> arrayListInteger = new ArrayList<>();
+		for (int i = 0; i < 20; i++) {
+			arrayListInteger.add((1 + secureRandon.nextInt(100)));
+		}
+		return arrayListInteger;
+	}
+
+	// cria um ArrayList do tipo Double com 20 elementos aleatórios.
+	private static ArrayList<Double> gerarArrayListDouble() {
+		ArrayList<Double> arrayListDouble = new ArrayList<>();
+		for (int i = 0; i < 20; i++) {
+			arrayListDouble.add((double) (1 + secureRandon.nextInt(100)));
+		}
+		return arrayListDouble;
+	}
+
+	// cria um ArrayList do tipo Float com 20 elementos aleatórios.
+	private static ArrayList<Float> gerarArrayListFloat() {
+		ArrayList<Float> arrayListFloat = new ArrayList<>();
+		for (int i = 0; i < 20; i++) {
+			arrayListFloat.add((float) (1 + secureRandon.nextInt(100)));
+		}
+		return arrayListFloat;
+	}
+
+	// cria um ArrayList do tipo String com as strings em arrayStrings.
+	private static ArrayList<String> gerarArrayListString() {
+		ArrayList<String> arrayListString = new ArrayList<>();
+		String[] arrayStrings = { "Java como programar", "Java para iniciantes", "Estruturas de Dados com Java",
+				"Sistemas de Banco de Dados" };
+		for (int i = 0; i < arrayStrings.length; i++) {
+			arrayListString.add(arrayStrings[i]);
+		}
+		return arrayListString;
+	}
+
+	// cria um ArrayList do tipo Number com diversos tipos numéricos.
+	private static ArrayList<Number> gerarArrayListNumber() {
+		ArrayList<Number> arrayListNumber = new ArrayList<Number>();
+		byte numByte = (byte) 64;
+		arrayListNumber.add(10);
+		arrayListNumber.add(200L);
+		arrayListNumber.add(3.78F);
+		arrayListNumber.add(20.0D);
+		arrayListNumber.add(numByte);
+		return arrayListNumber;
+	}
+
+	private static void print(Object object) {
+		System.out.print(object);
+	}
 }
