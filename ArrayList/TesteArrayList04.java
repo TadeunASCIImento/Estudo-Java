@@ -1,37 +1,94 @@
 package br.com.estudo;
 
 import java.util.ArrayList;
+import java.util.Scanner;
+
+/*
+ *  Realizando a soma de elementos de diversos tipos numéricos com ArrayList.
+ */
 
 public class TesteArrayList04 {
 
+	private static Scanner scanner = new Scanner(System.in);
+
 	public static void main(String[] args) {
 
-		// Cria um array do tipo Number.
-		Number[] numeros = { 1, 2.4, 3, 4.1, 56, 7.9, 5000L, 23.89F };
+		// cria e exibe um array do tipo numbers com 10 elementos.
+		print("informe 10 números para o ArrayNumber:");
+		Number[] arrayNumbers = obterArrayDoTipoNumbers();
+		print("elementos em ArrayNumbers");
+		exibirArrayNumbers(arrayNumbers);
+		print("\n");
 
-		// Cria a lista contendo o array de numeros.
-		ArrayList<Number> listaNumeros = new ArrayList<Number>();
+		// cria um ArrayList do tipo Number que recebe os elementos de arrayNumbers.
+		ArrayList<Number> arrayListNumbers = new ArrayList<Number>();
+		adicionarArrayNumberAoArrayListNumber(arrayNumbers, arrayListNumbers);
+		print("elementos em ArrayListNumbers");
+		exibirArrayListNumbers(arrayListNumbers);
+		print("\n");
 
-		// Adiciona os números na lista.
-		for (Number numero : numeros)
-			listaNumeros.add(numero);
-
-		// Exibe os números na lista.
-		System.out.println("Lista de numeros" + listaNumeros);
-
-		// Exibe a soma de todos os número na lista.
-		System.out.println("Soma total dos núemros na lista: " + somarNumeros(listaNumeros));
+		// realiza soma dos elementos em arrayListNumber e exibe o reultado.
+		print("soma dos elementos em ArrayListNumber: ");
+		double soma = somarArrayListNumbers(arrayListNumbers);
+		exibirResultadoDaSoma(soma);
 
 	}
 
-	// Metodo que realiza a soma dos elementos na lista utilizando curinga ( ? ).
-	private static double somarNumeros(ArrayList<? extends Number> listaNumeros) {
+	// obtem os valores para o array a partir do teclado.
+	private static Number[] obterArrayDoTipoNumbers() {
+		Number[] arrayNumbers = new Number[10];
+		for (int i = 0; i < arrayNumbers.length; i++) {
+			arrayNumbers[i] = scanner.nextDouble();
+		}
+		return arrayNumbers;
+	}
+
+	// passa os elementos de arrayNumbers para arrayListNumbers.
+	private static void adicionarArrayNumberAoArrayListNumber(Number[] arrayNumber,
+			ArrayList<Number> arrayListNumbers) {
+		for (Number number : arrayNumber) {
+			arrayListNumbers.add(number);
+
+		}
+
+	}
+
+	// exibe os elementos em arrayNumbers.
+	private static void exibirArrayNumbers(Number[] arrayNumbers) {
+		for (Number number : arrayNumbers) {
+			print("(" + number + ")");
+
+		}
+
+	}
+
+	// exibe os elementos em arrayListNumbers.
+	private static void exibirArrayListNumbers(ArrayList<Number> arrayListNumbers) {
+		for (Number number : arrayListNumbers) {
+			print("(" + number + ")");
+		}
+
+	}
+
+	// realiza a soma dos elementos em arrayListNumbers.
+	private static double somarArrayListNumbers(ArrayList<Number> arrayListNumbers) {
 		double total = 0;
-		// ForEach percorre a lista de numeros.
-		for (Number numero : listaNumeros)
-			// doubleValue() metodo static para obter o valor primitivo de numero subjacente.
-			total += numero.doubleValue();
+		for (Number number : arrayListNumbers) {
+			total += number.doubleValue();
+		}
 		return total;
+	}
+
+	// exibe o resultado da soma.
+	private static void exibirResultadoDaSoma(double soma) {
+		print(soma);
+
+	}
+
+	// imprime no console.
+	private static void print(Object object) {
+		System.out.print(object);
+
 	}
 
 }
