@@ -4,7 +4,7 @@ import java.io.File;
 import java.util.Scanner;
 
 /*
- *  Analizando o caminho de um arquivo/diretório.
+ *  Analisando o caminho de um arquivo/diretório.
  */
 
 public class AnalisaCaminhoDoArquivoOuDiretorio {
