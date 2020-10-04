@@ -1,35 +1,41 @@
 package br.com.estudo;
 
+/*
+ *  Analisando inicio e fim de uma string com startsWith e endsWith.
+ */
+
 public class TesteStrings06 {
 
 	public static void main(String[] args) {
+		startsWith(getArray(), "in", 0);
+		startsWith(getArray(), "ici", 2);
+		endsWith(getArray(), "ado");
+		endsWith(getArray(), "ndo");
 
-		String[] strings = { "inicio", "iniciando", "terminado", "terminando" };
+	}
 
-		for (String string : strings) {
-			if (string.startsWith("in"))
-				System.out.printf("\n%s Inicia com in", string);
+	// retorna o array de Strings.
+	public static String[] getArray() {
+		String[] array = { "inicio", "iniciando", "terminado", "terminando" };
+		return array;
+	}
+
+	// analisa o inicio da string apartir da posição desejada.
+	public static void startsWith(String[] array, String prefixo, int posicao) {
+		for (String string : array) {
+			if (string.startsWith(prefixo, posicao)) {
+				System.out.printf("%s inicia com %s a partir da posição %d\n", string, prefixo, posicao);
+			}
 		}
+	}
 
-		for (String string : strings) {
-			if (string.startsWith("ici", 2))
-				System.out.printf("\n%s Inicia com ici apartir da posição 2.", string);
+	// exibe as strings terminadas com o prefixo.
+	public static void endsWith(String[] array, String prefixo) {
+		for (String string : array) {
+			if (string.endsWith(prefixo)) {
+				System.out.printf("%s termina com %s\n", string, prefixo);
+			}
 		}
-
-		System.out.println("\n");
-
-		for (String string : strings) {
-			if (string.endsWith("ado"))
-				System.out.printf("\n%s termina com ado", string);
-
-		}
-
-		for (String string : strings) {
-			if (string.endsWith("ndo"))
-				System.out.printf("\n%s termina com ndo", string);
-
-		}
-
 	}
 
 }
