@@ -1,4 +1,3 @@
-package br.com.estudo;
 
 import java.util.Scanner;
 
@@ -15,9 +14,7 @@ public class TesteStrings07 {
 		System.out.println("Entre com a string:");
 		String string1 = inputStringScanner();
 		System.out.printf("String informada: %s\n", string1);
-
 		exibirTamanhoDaString(string1);
-
 		System.out.print("String invertida: ");
 		inverterString(string1);
 
@@ -27,7 +24,6 @@ public class TesteStrings07 {
 		System.out.println("fim?");
 		int fim = scanner.nextInt();
 		char[] charArray = getChars(string1, inicio, fim);
-
 		exibirCharArray(charArray);
 
 	}
@@ -50,9 +46,9 @@ public class TesteStrings07 {
 		System.out.printf("Tamanho: %d\n", string.length());
 	}
 
-	// passa os caracteres do indice 0 ao 5 para charArray
+	// passa os caracteres dos indices inicio até fim para charArray.
 	public static char[] getChars(String string, int inicio, int fim) {
-		char[] charArray = new char[5];
+		char[] charArray = new char[string.length()];
 		string.getChars(inicio, fim, charArray, 0);
 		return charArray;
 	}
