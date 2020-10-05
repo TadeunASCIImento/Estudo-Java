@@ -1,32 +1,67 @@
 package br.com.estudo;
 
+import java.util.Scanner;
+
+/*
+ * 	Usando métodos da classe String
+ */
+
 public class TesteStrings07 {
+
+	private static Scanner scanner = new Scanner(System.in);
 
 	public static void main(String[] args) {
 
-		// cria a string
-		String str1 = "Outros métodos da classe String";
+		System.out.println("Entre com a string:");
+		String string1 = inputStringScanner();
+		System.out.printf("String informada: %s\n", string1);
 
-		// cria um array de caracteres
+		exibirTamanhoDaString(string1);
+
+		System.out.print("String invertida: ");
+		inverterString(string1);
+
+		System.out.println("\ninforme os índices de inicio e fim para nova string:");
+		System.out.println("inicio?");
+		int inicio = scanner.nextInt();
+		System.out.println("fim?");
+		int fim = scanner.nextInt();
+		char[] charArray = getChars(string1, inicio, fim);
+
+		exibirCharArray(charArray);
+
+	}
+
+	// inverte a string.
+	private static void inverterString(String string) {
+		for (int i = string.length() - 1; i >= 0; i--) {
+			System.out.printf("%c", string.charAt(i));
+		}
+	}
+
+	// entrada de dados do tipo String
+	public static String inputStringScanner() {
+		String string = scanner.nextLine();
+		return string;
+	}
+
+	// exibe o tamanho da String.
+	public static void exibirTamanhoDaString(String string) {
+		System.out.printf("Tamanho: %d\n", string.length());
+	}
+
+	// passa os caracteres do indice 0 ao 5 para charArray
+	public static char[] getChars(String string, int inicio, int fim) {
 		char[] charArray = new char[5];
+		string.getChars(inicio, fim, charArray, 0);
+		return charArray;
+	}
 
-		// exibe a string
-		System.out.printf("str1: %s", str1);
-
-		// exibe o tamanho da string
-		System.out.printf("\nTamanho de str1: %d ", str1.length());
-
-		// exibe a string invertida
-		System.out.print("\nInvertendo str1 é : ");
-		for (int count = str1.length() - 1; count >= 0; count--)
-			System.out.printf("%c", str1.charAt(count));
-
-		// passa os caracteres do indice 0 ao 5 para charArray
-		str1.getChars(0, 5, charArray, 0);
-		System.out.print("\nOs caracteres em charArray do indíce 0 ao 5: ");
-		for (char letra : charArray)
-			System.out.print(" " + letra);
-
+	// exibe os caracteres em charArray.
+	public static void exibirCharArray(char[] charArray) {
+		for (char c : charArray) {
+			System.out.printf("%c", c);
+		}
 	}
 
 }
