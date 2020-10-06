@@ -2,7 +2,7 @@
 import java.util.Scanner;
 
 /*
- * 	Usando métodos da classe String
+ * 	Usando métodos da classe String.
  */
 
 public class TesteStrings07 {
