@@ -1,5 +1,8 @@
 package br.com.estudo;
 
+/*
+   Construtores e outros métodos da classe String.
+*/
 public class TesteStrings08 {
 
 	public static void main(String[] args) {
