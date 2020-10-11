@@ -1,30 +1,43 @@
 package br.com.estudo;
 
-public class UsandoStringBuilder {
+/*
+ * Usando string builder.
+ */
+
+public class TesteStringBuilder01 {
 
 	public static void main(String[] args) {
 
-		StringBuilder buffer = new StringBuilder("Usando StringBuilder");
+		String string = "Usando StringBuilder";
+		StringBuilder builder = new StringBuilder();
+		builder.append(string);
+		System.out.println(builder);
 
-		System.out.println("\n\t\t" + buffer.toString());
+		int size = obterTamanhoStringBuilder(builder);
+		System.out.printf("tamanho: %d\n", size);
 
-		if (buffer.length() < 10)
-			System.out.println("\n\n\t\tÉ menor que 10, tamanho: " + buffer.length());
-		else
-			System.out.println("\n\n\t\tÉ maior que 10,  tamanho: " + buffer.length());
+		System.out.printf("Invertido: %s\n", inverterStringBuffer(builder));
 
-		System.out.print("\n\t\tinvertendo buffer: ");
-		System.out.println(buffer.reverse());
+		builder = substituirCaracteres(inverterStringBuffer(builder), 0, 'u');
+		System.out.println(builder);
 
-		System.out.print("\n\t\tinvertendo novamente para o formato original: ");
-		System.out.println(buffer.reverse());
+	}
 
-		buffer.setCharAt(0, 'u');
+	// retorna o tamanho do buffer.
+	public static int obterTamanhoStringBuilder(StringBuilder builder) {
+		return builder.length();
+	}
 
-		buffer.setCharAt(19, 'R');
+	// inverte o conteúdo do buffer.
+	public static StringBuilder inverterStringBuffer(StringBuilder builder) {
+		return builder.reverse();
+	}
 
-		System.out.println("\n\t\tSubstituindo  as letras nos indices 0 e 19");
-		System.out.println("\n\t\t" + buffer.toString());
+	// substitui a letra no indice indicado.
+	public static StringBuilder substituirCaracteres(StringBuilder builder, int indice, Character letra) {
+		builder.setCharAt(indice, letra);
+		return builder;
+
 	}
 
 }
