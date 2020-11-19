@@ -3,7 +3,7 @@ package execoes;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class TestandoExcessoes2 {
+public class TestandoExcecoes2 {
 
 	public static void main(String[] args) {
 
