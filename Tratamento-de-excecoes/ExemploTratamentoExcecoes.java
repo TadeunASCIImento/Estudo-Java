@@ -1,16 +1,9 @@
-package br.com.tratamento.execoes;
+package execoes;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class ExemploTratamentoExcecoes {
-
-	// Metodo que pode lançar uma ArithmeticException
-	public static double realizarDivisao(double numerador, double denominador) throws ArithmeticException {
-		double resultado = 0.0;
-		resultado = numerador / denominador;
-		return resultado;
-	}
+public class TestandoExcessoes2 {
 
 	public static void main(String[] args) {
 
@@ -49,6 +42,13 @@ public class ExemploTratamentoExcecoes {
 		} while (continueLoop);
 
 		input.close();
+	}
+
+	// Metodo que pode lançar uma ArithmeticException
+	public static double realizarDivisao(double numerador, double denominador) throws ArithmeticException {
+		double resultado = 0.0;
+		resultado = numerador / denominador;
+		return resultado;
 	}
 
 }
