@@ -1,6 +1,6 @@
-package br.com.estudo;
+package execoes;
 
-public class TratandoExcecoes {
+public class TestandoExcecoes1 {
 
 	public static void main(String[] args) {
 
