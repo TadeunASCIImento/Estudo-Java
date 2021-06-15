@@ -7,26 +7,19 @@ import java.util.Scanner;
 public class TesteArrays03 {
 
 	private static Scanner scanner = new Scanner(System.in);
-
 	private static String inputNomeMessage = "Informe 3 nomes ?";
 	private static String equalMessage = " existe no arrayNomes2.";
 	private static String showArrayMessage = "Nomes no array:";
 
 	public static void main(String[] args) {
-
 		showMessage(inputNomeMessage);
 		String[] arrayNomes1 = getArrayNomes();
-
 		exibirArrayDeNomes(arrayNomes1);
 		System.out.println("\n");
-
 		showMessage(inputNomeMessage);
 		String[] arrayNomes2 = getArrayNomes();
-
 		exibirArrayDeNomes(arrayNomes2);
 		System.out.println("\n");
-
-
 		getEquals(arrayNomes1, arrayNomes2);
 
 	}
